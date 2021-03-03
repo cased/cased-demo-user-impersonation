@@ -6,9 +6,15 @@
       </p>
     </div>
     <div>
-      <a href="#" class="inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50">
-        Login
-      </a>
+      <% if current_user? %>
+        <% if current_user == user %>
+          <%= button_to 'Logout', logout_path, method: :delete, class: 'cursor-pointer inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50' %>
+        <% else %>
+          <%= button_to 'Impersonate', impersonate_path(user), class: 'cursor-pointer inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50' %>
+        <% end %>
+      <% else %>
+        <%= button_to 'Login', login_path(user), class: 'cursor-pointer inline-flex items-center shadow-sm px-2.5 py-0.5 border border-gray-300 text-sm leading-5 font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50' %>
+      <% end %>
     </div>
   </div>
 </li>
