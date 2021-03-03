@@ -66,3 +66,7 @@ end
 ```sh
 $ GUARD_APPLICATION_KEY=guard_application_1pG43CjBKeRS9vPmnB9vN70be7g rails server
 ```
+
+5. Trigger your action:
+
+![image](https://user-images.githubusercontent.com/79995/109853581-e2b59400-7c0a-11eb-9127-16db7428336c.png)
